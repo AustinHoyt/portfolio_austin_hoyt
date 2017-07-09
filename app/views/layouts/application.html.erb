@@ -1,19 +1,69 @@
 <!DOCTYPE html>
 <html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
-    <title>Saasapp</title>
+    <title>AHoytPortfolio</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:500,700i" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script>
+      $(document).ready(function(){
+        // Add smooth scrolling to all links
+        $("a").on('click', function(event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+            // Store hash
+            var hash = this.hash;
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800, function(){
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+      });
+    </script>
   </head>
 
   <body>
-
-    
-
-    
+    <!-- Navbar (sit on top) -->
+      <div class="w3-top w3-hide-small w3-animate-opacity">
+        <div class="w3-bar w3-large w3-green w3-opacity-off"id="myNavbar">
+          <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+            <i class="fa fa-bars"></i>
+          </a>
+          <a href="/" class="w3-bar-item w3-hover-teal  w3-button w3-hide-small">HOME</a>
+          <a href="#about" class="w3-bar-item w3-hover-teal w3-button w3-hide-small"><i class="fa fa-user"></i>About</a>
+          <a href="#portfolio" class="w3-bar-item w3-hover-teal w3-button w3-hide-small"><i class="fa fa-th"></i>Portfolio</a>
+          <a href="#contact" class="w3-bar-item w3-hover-teal w3-button w3-hide-small"><i class="fa fa-envelope"></i>Contact Me</a>
+          <a href="/resume" class="w3-bar-item w3-hover-teal w3-button w3-hide-small"><i class="fa fa-envelope"></i>Resume</a>
+        </div>
+      
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+          <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">About</a>
+          <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">Portfolio</a>
+          <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">Contact</a>
+        </div>
+      </div>
+      
     <%= yield %>
-  
-    
   </body>
 </html>
+
+
+
+

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-    
+
   root to: 'demo#index'
-  get 'about', to: 'demo#about'
-  
-  
+  get 'resume', to: 'demo#resume'
+
 end
