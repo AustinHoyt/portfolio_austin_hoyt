@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AHoytPortfolio</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:500,700i" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-
+    <style>
+      h1, h2, h3, h4, h5, h6, p, a {font-family:Montserrat;}
+    </style>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
@@ -41,25 +43,30 @@
   <body>
     <!-- Navbar (sit on top) -->
       <div class="w3-top w3-hide-small w3-animate-opacity">
-        <div class="w3-bar w3-large w3-green w3-opacity-off"id="myNavbar">
+        <div class="w3-bar w3-large w3-green w3-opacity-off" id="myNavbar">
           <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
             <i class="fa fa-bars"></i>
           </a>
-          <a href="/" class="w3-bar-item w3-hover-teal  w3-button w3-hide-small">HOME</a>
-          <a href="#about" class="w3-bar-item w3-hover-teal w3-button w3-hide-small"><i class="fa fa-user"></i>About</a>
-          <a href="#portfolio" class="w3-bar-item w3-hover-teal w3-button w3-hide-small"><i class="fa fa-th"></i>Portfolio</a>
+          <a href="#home" class="w3-bar-item w3-hover-teal  w3-button w3-hide-small">HOME</a>
+          <a href="#about" class="w3-bar-item w3-hover-teal w3-button w3-hide-small"><i class="fa fa-male"></i>About</a>
+          <a href="#strength" class="w3-bar-item w3-hover-teal w3-button w3-hide-small"><i class="fa fa-balance-scale"></i>Strengths</a>
+          <a href="#portfolio" class="w3-bar-item w3-hover-teal w3-button w3-hide-small"><i class="fa fa-photo"></i>Portfolio</a>
           <a href="#contact" class="w3-bar-item w3-hover-teal w3-button w3-hide-small"><i class="fa fa-envelope"></i>Contact Me</a>
-          <a href="/resume" class="w3-bar-item w3-hover-teal w3-button w3-hide-small"><i class="fa fa-envelope"></i>Resume</a>
+          <a href="#resume" class="w3-bar-item w3-hover-teal w3-button w3-hide-small"><i class="fa fa-address-card"></i>Resume</a>
         </div>
       
         <!-- Navbar on small screens -->
         <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
           <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">About</a>
+          <a href="#strength" class="w3-bar-item w3-button" onclick="toggleFunction()">Strengths</a>
           <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">Portfolio</a>
           <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">Contact</a>
+          <a href="#resume" class="w3-bar-item w3-button" onclick="toggleFunction()">Resume</a>
         </div>
       </div>
       
+      
+     
     <%= yield %>
   </body>
 </html>
