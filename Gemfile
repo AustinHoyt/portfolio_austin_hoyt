@@ -31,6 +31,11 @@ gem 'jbuilder', '2.5.0'
 # Use Twitter Bootstrap library for front-end UI and layout
 gem 'bootstrap-sass', '3.3.7'
 
+#Use Font Awesome sass gem for front-end UI and layout
+gem 'font-awesome-sass', '4.6.2'
+
+#Use Hirb for better database table display in console
+gem 'hirb', '0.7.3'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
