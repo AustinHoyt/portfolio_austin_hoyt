@@ -15,7 +15,6 @@
     </style>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
     <script>
       $(document).ready(function(){
         // Add smooth scrolling to all links
@@ -65,8 +64,11 @@
         </div>
       </div>
       
-      
-     
+    <div class="container">
+     <% flash.each do |type, msg| %>
+      <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+     <% end %>
+    </div>
     <%= yield %>
     
   </body>
