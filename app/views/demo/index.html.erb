@@ -41,7 +41,7 @@
           <li><p>Suffered a third knee surgery that kept me immobile a year</p></li>
           <li><p>Having time and a love for computers, I decided to build a website
                  for my favorite video game. I had no idea where to even begin</p></li>
-          <li><p>I dedicated the majority of my study time focusing on learning HTML, CSS, and a little Ruby on Rails / JavaScript</p></li>
+          <li><p>I dedicated the majority of my study time focusing on learning HTML, CSS, and the basics of Rails and JavaScript</p></li>
         </ul>
       </div>
       
@@ -185,10 +185,10 @@
         <ul>
           <li><p>Built a rails application that supports e-commerce following an instructor.
           The app allows users to sign up for free or pay monthly and 
-          automatically get billed via recurring charges.</p></li>
+          automatically get billed via recurring charges</p></li>
             
           <li><p>Learned how to use valuable resources such as Bootstrap, Github,
-          jQuery, Rails, gems, as well as how to deploy to live servers.</p></li>
+          jQuery, Rails, gems, as well as how to deploy to live servers</p></li>
         </ul>
         <br>
         <br>
@@ -221,6 +221,7 @@
         <h3 class="barrier w3-padding"><i class="fa fa-university"></i><strong>Education</strong></h3>
         <ul>
           <li><h5 class="w3-padding-small">Bachelor of Business Administration: Marketing Management</h4></li>
+          <li><h5 class="w3-padding-small">Google Analytics Beginner Certified</h4></li>
           <li><h5 class="w3-padding-small">Upskill-The Essential Web Developer Course</h4></li>
           <li><h5 class="w3-padding-small">Lynda-Javascript Essential Training</h4></li>
           <li><h5 class="w3-padding-small">Lynda-Learning the JavaScript Language</h4></li>
@@ -244,63 +245,44 @@
 <section>
 <div class="w3-content w3-container w3-padding-64" id="contact">
   <h4 class="w3-center">Looking For Work!</h4>
-  <p class="w3-center"><em>I'd love your feedback</em></p>
-
   <div class="w3-row w3-section">
-    <div class="w3-large w3-margin-bottom">
-      <h5 class="w3-center">I am currently looking for either full-time employment or freelance work</h5>
-      <h6 class="w3-center">Please feel free to send me a message below!</h6>
+    <div class="w3-large w3-margin-bottom w3-center">
+      <h5>I am currently looking for either full-time employment or freelance work</h5>
+      <h6>Please feel free to send me a message below!</h6>
+      <i class="fa fa-arrow-down"></i>
     </div>
   </div>
   
 </section>
 
-
-
 <section>
-  <div class = "frame">
+  <div class ="frame">
 <div id = "button_open_envelope">
   <p class="w3-center">Email Me</p>
 </div>
 	<div class = "message">
-	  <?php include('form_process.php'); ?>
-		<form accept-charset="UTF-8" id="contact" action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
-		  
-
-			<input type="text" name="name" id="name" placeholder="Name*">
-
-			
-	
-			<input type="text" name="email" id="email" placeholder="Email*">
-	
-			
-	
-			<input type="text" name="phone" id="phone" placeholder=" Phone (optional)" autofocus> 
+		<%= form_for @contact, method: :post do |f| %>
 		
-
-			<textarea name="message" type="text" id="messarea" placeholder="Message*"></textarea>
-	
-			
-	
-			<input type="text" name="address" id="address" style="display: none;">
-		
-			
-			
-			<input type="submit" value="Send" id="send">
-		
-		</form>
-		
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      
+      <%= f.label :comments %>
+      <%= f.text_field :comments %>
+      
+      <%= f.submit 'Submit', class: "w3-btn w3-green w3-hover-white w3-hover-text-green w3-round-xxlarge" %>
+    <% end %>
 	</div>
 	
-	<div class = "bottom"></div>			
-	<div class = "left"></div>
-	<div class = "right"></div>
-	<div class = "top"></div>
+	<div class ="bottom"></div>			
+	<div class ="left"></div>
+	<div class ="right"></div>
+	<div class ="top"></div>
 	<script src="js/script.js"></script>
 	
 </div>
-
-
 </section>
 
 
