@@ -10,7 +10,7 @@ class DemoController < ApplicationController
       @name = params[:contact][:name]
       @email = params[:contact][:email]
       @comments = params[:contact][:comments]
-      ContactMailer.contact_email(name, email, body).deliver
+      ContactMailer.contact_email(name, email, comments).deliver
       redirect_to root_path
       flash[:success] = "Message sent! Thank you for contacting me!"
     else
@@ -21,7 +21,7 @@ class DemoController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:first_name, :email, :message)
+    params.require(:contact).permit(:first_name, :email, :comments)
   end
 
 end
